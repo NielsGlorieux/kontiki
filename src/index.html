@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <title>Kon Tiki</title>
+  <base href="/">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" type="image/x-icon" href="/assets/favicon.png">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+</head>
+
+<body>
+  <app-root></app-root>
+
+  <script>
+    // Open the Modal
+    function openModal() {
+      document.getElementById('myModal').style.display = "block";
+    }
+
+    // Close the Modal
+    function closeModal() {
+      document.getElementById('myModal').style.display = "none";
+    }
+
+    var slideIndex = 1;
+    var slideIndexOut = 1;
+
+    // showSlides(slideIndex);
+    showSlidesOut(slideIndexOut);
+
+    // Next/previous controls
+    function plusSlides(n) {
+      showSlides(slideIndex += n);
+    }
+    function plusSlidesOut(n) {
+      showSlidesOut(slideIndexOut += n);
+    }
+
+    // Thumbnail image controls
+    function currentSlide(n) {
+      showSlides(slideIndex = n);
+    }
+    function currentSlideOut(n) {
+      showSlidesOut(slideIndexOut = n);
+    }
+
+    function showSlides(n) {
+      var i;
+      var slides = document.getElementsByClassName("mySlides");
+      var dots = document.getElementsByClassName("demo");
+      var captionText = document.getElementById("caption");
+      if (n > slides.length) { slideIndex = 1 }
+      if (n < 1) { slideIndex = slides.length }
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" active", "");
+      }
+      slides[slideIndex - 1].style.display = "block";
+      dots[slideIndex - 1].className += " active";
+      captionText.innerHTML = dots[slideIndex - 1].alt;
+    }
+
+    function showSlidesOut(n) {
+      var i;
+      var slides = document.getElementsByClassName("mySlidesOut");
+
+      if (n > slides.length) { slideIndexOut = 1 }
+      if (n < 1) { slideIndexOut = slides.length }
+      for (i = 0; i < slides.length; i++) {
+        slides[i].style.display = "none";
+      }
+      slides[slideIndexOut - 1].style.display = "block";
+    }
+  </script>
+
+
+  <script>
+ 
+    var folder = "/src/assets/gallery";
+
+    $.ajax({
+        url : folder,
+        success: function (data) {
+            $(data).find("a").attr("href", function (i, val) {
+                if( val.match(/\.(jpe?g|png|gif)$/) ) { 
+                    $("body").append( "<img src='"+ folder + val +"'>" );
+                } 
+            });
+        }
+    });
+
+  </script>
+
+</body>
+
+</html>

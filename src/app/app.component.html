@@ -1,0 +1,181 @@
+<!--The content below is only a placeholder and can be replaced.-->
+<!-- <div style="text-align:center">
+  <h1>
+    {{ title }}
+  </h1> 
+</div> -->
+
+<div id="logo">
+  <img id='logoimg' alt="Kon tiki Logo" src="/assets/LOGO.png">
+</div>
+
+<div id='social'>
+  <a href="https://www.facebook.com/kontiki.music/" target="_blank">
+    <img alt="facebook" src="/assets/social/facebook.png" width="40" height="40">
+  </a>
+
+  <a href="https://www.instagram.com/kontiki.music/" target="_blank">
+    <img alt="instagram" src="/assets/social/Instagram.png" width="40" height="40">
+  </a>
+
+</div>
+
+<div id='wrapper'>
+
+  <div id="container">
+
+    <div id="kalender">
+
+      <h3>upcoming</h3>
+
+      <ul style="list-style-type:none">
+        <li><b><a target="_blank" id="link" href="https://www.facebook.com/events/217720199165891/">31 januari --> Bar
+              Des Amis</a></b></li>
+      </ul>
+    </div>
+
+
+    <div id="sets">
+      <h3>sets</h3>
+
+      <ul style="list-style-type:none">
+        <li><iframe id='mixset' width="90%" height="70" src="https://www.mixcloud.com/widget/iframe/?feed=%2Fcasper-de-saedeleer2%2Fela-sad%C3%A8r-b2b-kaii-paktoebak-2%2F"
+            frameborder="0"></iframe>
+        </li>
+      </ul>
+    </div>
+
+  </div>
+
+  <div id="foto">
+    <div id="fotoinh">
+
+      <div class="modal-contentOut">
+
+        <div class="mySlidesOut " style="display: block">
+          <img id='galimg' src="assets/gallery/pic1.jpg" onclick="openModal();currentSlide(1)">
+        </div>
+
+        <div class="mySlidesOut" style="display: none">
+          <img id='galimg' src="assets/gallery/pic2.jpg" onclick="openModal();currentSlide(2)">
+        </div>
+
+        <div class="mySlidesOut" style="display: none">
+          <img id='galimg' src="assets/gallery/pic3.jpg" onclick="openModal();currentSlide(3)">
+        </div>
+
+        <div class="mySlidesOut" style="display: none">
+          <img id='galimg' src="assets/gallery/pic4.jpg" onclick="openModal();currentSlide(4)">
+        </div>
+
+        <div class="mySlidesOut" style="display: none">
+          <img id='galimg' src="assets/gallery/disco.png" onclick="openModal();currentSlide(5)">
+        </div>
+
+        <div class="mySlidesOut" style="display: none">
+          <img id='galimg' src="assets/gallery/schilder.png" onclick="openModal();currentSlide(6)">
+        </div>
+
+        <div id="volgendevorige">
+          <a class="prev" onclick="plusSlidesOut(-1)">&#10094;</a>
+          <a class="next" onclick="plusSlidesOut(1)">&#10095;</a>
+        </div>
+
+      </div>
+
+      <!-- <h3>foto's</h3> -->
+
+
+      <!-- The Modal/Lightbox -->
+      <div id="myModal" class="modal">
+        <div class="modal-content">
+          <span class="close cursor" onclick="closeModal()">&times;</span>
+
+          <div class="mySlides">
+            <div class="numbertext">1 / 4</div>
+            <img src="assets/gallery/pic1.jpg" style="width:50%">
+          </div>
+
+          <div class="mySlides">
+            <div class="numbertext">2 / 4</div>
+            <img src="assets/gallery/pic2.jpg" style="width:50%">
+          </div>
+
+          <div class="mySlides">
+            <div class="numbertext">3 / 4</div>
+            <img src="assets/gallery/pic3.jpg" style="width:50%">
+          </div>
+
+          <div class="mySlides">
+            <div class="numbertext">4 / 4</div>
+            <img src="assets/gallery/pic4.jpg" style="width:50%">
+          </div>
+
+          <!-- Next/previous controls -->
+          <div id="volgendevorige">
+            <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+            <a class="next" onclick="plusSlides(1)">&#10095;</a>
+          </div>
+
+          <!-- Caption text -->
+          <div class="caption-container">
+            <p id="caption"></p>
+          </div>
+
+          <!-- Thumbnail image controls -->
+          <div id='thumbnailsbig'>
+            <div class="column">
+              <img class="demo" src="assets/gallery/pic1.jpg" onclick="currentSlide(1)" alt="Nature" style="width:70%">
+            </div>
+
+            <div class="column">
+              <img class="demo" src="assets/gallery/pic2.jpg" onclick="currentSlide(2)" alt="Snow" style="width:70%">
+            </div>
+
+            <div class="column">
+              <img class="demo" src="assets/gallery/pic3.jpg" onclick="currentSlide(3)" alt="Mountains" style="width:70%">
+            </div>
+
+            <div class="column">
+              <img class="demo" src="assets/gallery/pic4.jpg" onclick="currentSlide(4)" alt="Lights" style="width:70%">
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+
+  </div>
+
+
+
+
+</div>
+
+
+<router-outlet></router-outlet>
+
+
+<!-- 
+    <div id='thumbnailsbig'>
+      <div class="column">
+        <img src="assets/gallery/thumb/pic1_tn.jpg" onclick="openModal();currentSlide(1)" alt="Nature" style="width:70%"
+          class="hover-shadow">
+      </div>
+
+      <div class="column">
+        <img class="demo" src="assets/gallery/thumb/pic2_tn.jpg" onclick="openModal();currentSlide(2)" alt="Snow" style="width:70%"
+          class="hover-shadow">
+      </div>
+
+      <div class="column">
+        <img class="demo" src="assets/gallery/thumb/pic3_tn.jpg" onclick="openModal();currentSlide(3)" alt="Mountains"
+          style="width:70%" class="hover-shadow">
+      </div>
+
+      <div class="column">
+        <img class="demo" src="assets/gallery/thumb/pic4_tn.jpg" onclick="openModal();currentSlide(4)" alt="Lights"
+          style="width:70%" class="hover-shadow">
+      </div>
+    </div> -->
